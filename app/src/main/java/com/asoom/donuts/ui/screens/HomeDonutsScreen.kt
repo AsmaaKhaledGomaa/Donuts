@@ -299,7 +299,7 @@ fun CardDonuts(
                 color = Color.Black.copy(alpha = .6f),
                 maxLines = 1,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.align(Alignment.CenterHorizontally).padding(start = 16.dp)
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
             Text(
                 text = subTitle,
