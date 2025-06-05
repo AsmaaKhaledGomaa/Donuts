@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -278,7 +279,8 @@ fun CardDonuts(
     Box(
         modifier = modifier
             .width(140.dp)
-            .height(160.dp),
+            .height(160.dp)
+            .padding(top = 30.dp),
         contentAlignment = Alignment.TopCenter
     ) {
         Column(
@@ -295,15 +297,20 @@ fun CardDonuts(
                 fontWeight = FontWeight.SemiBold,
                 fontFamily = InterFont,
                 color = Color.Black.copy(alpha = .6f),
-                maxLines = 1
+                maxLines = 1,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.align(Alignment.CenterHorizontally).padding(start = 16.dp)
             )
             Text(
                 text = subTitle,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Medium,
                 fontFamily = InterFont,
-                color = Color.Black.copy(alpha = .6f),
-                maxLines = 1
+                color = TitleColor,
+                maxLines = 1,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+
             )
         }
 
