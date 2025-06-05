@@ -130,11 +130,11 @@ private fun AboutSection() {
     Text(
         modifier = Modifier.padding(horizontal = 40.dp),
         text = "These soft, cake-like Strawberry Frosted Donuts feature fresh strawberries and a delicious fresh strawberry glaze frosting. Pretty enough for company and the perfect treat to satisfy your sweet tooth.",
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontFamily = InterFont,
         fontWeight = FontWeight.Normal,
-        letterSpacing = 0.7.sp,
-        lineHeight = 14.sp,
+        letterSpacing = 0.5.sp,
+        lineHeight = 18.sp,
         color = Black60Color
     )
 }
