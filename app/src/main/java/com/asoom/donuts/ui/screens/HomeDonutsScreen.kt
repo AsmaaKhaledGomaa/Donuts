@@ -259,13 +259,13 @@ fun DonutsListSection() {
             subTitle = "$22",
         )
         CardDonuts(
-            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 10.dp),
+            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 0.dp),
             imageDonuts = painterResource(R.drawable.img_donuts_two),
             title = "Strawberry Rain",
             subTitle = "$22"
         )
         CardDonuts(
-            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 40.dp),
+            modifier = Modifier.padding(top = 17.dp, start = 0.dp, end = 10.dp),
             imageDonuts = painterResource(R.drawable.img_donuts_three),
             title = "Strawberry",
             subTitle = "$22"
@@ -282,7 +282,7 @@ fun CardDonuts(
 ) {
     Box(
         modifier = modifier
-            .width(140.dp)
+            .width(150.dp)
             .height(160.dp)
             .padding(top = 30.dp),
         contentAlignment = Alignment.TopCenter
