@@ -9,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.material3.Scaffold
+import com.asoom.donuts.ui.screens.DonutsDetailsScreen
+import com.asoom.donuts.ui.screens.HomeDonutsScreen
 import com.asoom.donuts.ui.screens.SplashScreen
 import com.asoom.donuts.ui.theme.DonutsTheme
 
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
             DonutsTheme {
                 Scaffold(contentWindowInsets = WindowInsets.systemBars) {
                     SplashScreen()
-                    // HomeDonutsScreen()
+                    //  HomeDonutsScreen()
                     // DonutsDetailsScreen()
                 }
             }

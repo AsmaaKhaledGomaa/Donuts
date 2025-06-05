@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -63,36 +64,43 @@ private fun ImageWithBottomSheet() {
         Image(
             painter = painterResource(R.drawable.img_big_donut),
             contentDescription = "Donut Image",
-            modifier = Modifier.align(Alignment.TopCenter).padding(top = 70.dp)
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = 70.dp)
         )
         BottomSheetContent(
             modifier = Modifier
                 .padding(top = 23.dp)
                 .align(Alignment.BottomCenter)
         )
-        FavoriteIcon(
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .padding(end = 33.dp)
-        )
     }
 }
 
 @Composable
 private fun BottomSheetContent(modifier: Modifier) {
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(topEnd = 40.dp, topStart = 40.dp))
-            .background(Color.White)
-    ) {
-        Column(modifier = Modifier.padding(top = 35.dp)) {
-            DonutTitle()
-            Spacer(modifier = Modifier.height(33.dp))
-            AboutSection()
-            Spacer(modifier = Modifier.height(26.dp))
-            QuantitySection()
-            PriceAndAddToCart()
+    Box(modifier = modifier) {
+
+        Box(
+            modifier = Modifier
+                .clip(RoundedCornerShape(topEnd = 40.dp, topStart = 40.dp))
+                .background(Color.White)
+        ) {
+            Column(modifier = Modifier.padding(top = 35.dp)) {
+                DonutTitle()
+                Spacer(modifier = Modifier.height(33.dp))
+                AboutSection()
+                Spacer(modifier = Modifier.height(26.dp))
+                QuantitySection()
+                PriceAndAddToCart()
+            }
         }
+
+        FavoriteIcon(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(end = 33.dp)
+                .offset(y = (-23).dp)
+        )
     }
 }
 
@@ -237,7 +245,7 @@ private fun PriceAndAddToCart() {
 private fun FavoriteIcon(modifier: Modifier) {
     Box(
         modifier = modifier
-            .size(45.dp)
+            .size(46.dp)
             .shadow(elevation = 1.dp, shape = RoundedCornerShape(15.dp))
             .clip(RoundedCornerShape(15.dp))
             .background(Color.White)
@@ -255,6 +263,6 @@ private fun FavoriteIcon(modifier: Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun DonutsDetailsScreenPreview(){
+fun DonutsDetailsScreenPreview() {
     DonutsDetailsScreen()
 }
