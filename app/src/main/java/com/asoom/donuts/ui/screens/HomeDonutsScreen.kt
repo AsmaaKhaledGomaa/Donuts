@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -36,6 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.min
 import androidx.compose.ui.unit.sp
 import com.asoom.donuts.R
 import com.asoom.donuts.ui.theme.BackGroundBinkColor
@@ -129,7 +131,8 @@ fun TodayOffersSection() {
     Row(
         modifier = Modifier
             .padding(top = 22.dp)
-            .fillMaxWidth().fillMaxHeight(.8f)
+            .fillMaxWidth()
+            .fillMaxHeight(.8f)
             .horizontalScroll(rememberScrollState())
     ) {
         OfferCard(
@@ -162,9 +165,12 @@ fun OfferCard(
     backgroundColor: Color,
     imageRes: Int
 ) {
-    Box(modifier = Modifier
-        .padding(horizontal = 10.dp).fillMaxHeight()
-        .width(215.dp)) {
+    Box(
+        modifier = Modifier
+            .padding(horizontal = 10.dp)
+            .fillMaxHeight()
+            .width(215.dp)
+    ) {
 
         Box(modifier = Modifier.width(250.dp)) {
             Column(
@@ -259,13 +265,13 @@ fun DonutsListSection() {
             subTitle = "$22",
         )
         CardDonuts(
-            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 0.dp),
+            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 10.dp),
             imageDonuts = painterResource(R.drawable.img_donuts_two),
             title = "Strawberry Rain",
             subTitle = "$22"
         )
         CardDonuts(
-            modifier = Modifier.padding(top = 17.dp, start = 0.dp, end = 10.dp),
+            modifier = Modifier.padding(top = 17.dp, start = 10.dp, end = 10.dp),
             imageDonuts = painterResource(R.drawable.img_donuts_three),
             title = "Strawberry",
             subTitle = "$22"
@@ -292,6 +298,7 @@ fun CardDonuts(
                 .align(Alignment.BottomCenter)
                 .clip(RoundedCornerShape(20.dp))
                 .background(Color.White)
+                .widthIn(min = 140.dp)
                 .padding(top = 40.dp, bottom = 12.dp, start = 12.dp, end = 12.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
