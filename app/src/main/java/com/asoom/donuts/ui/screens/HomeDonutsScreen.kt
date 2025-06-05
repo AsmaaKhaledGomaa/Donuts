@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -127,7 +129,7 @@ fun TodayOffersSection() {
     Row(
         modifier = Modifier
             .padding(top = 22.dp)
-            .fillMaxWidth()
+            .fillMaxWidth().fillMaxHeight(.8f)
             .horizontalScroll(rememberScrollState())
     ) {
         OfferCard(
@@ -138,6 +140,7 @@ fun TodayOffersSection() {
             backgroundColor = StrawberryWhellColor,
             imageRes = R.drawable.img_donut_card_1
         )
+        Spacer(modifier = Modifier.width(26.dp))
 
         OfferCard(
             title = "Chocolate Glaze",
@@ -160,8 +163,8 @@ fun OfferCard(
     imageRes: Int
 ) {
     Box(modifier = Modifier
-        .padding(horizontal = 10.dp)
-        .width(229.dp)) {
+        .padding(horizontal = 10.dp).fillMaxHeight()
+        .width(215.dp)) {
 
         Box(modifier = Modifier.width(250.dp)) {
             Column(
@@ -228,7 +231,8 @@ fun OfferCard(
         Image(
             modifier = Modifier
                 .padding(top = 36.dp)
-                .align(Alignment.TopEnd),
+                .align(Alignment.TopEnd)
+                .offset(x = 35.dp),
             painter = painterResource(imageRes),
             contentDescription = null,
             contentScale = ContentScale.FillBounds
